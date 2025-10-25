@@ -3,18 +3,18 @@
   "name": "ContextStore",
   "version": "1.0.0",
   "description": "Your research notes companion for Chrome",
-  "permissions": ["storage", "contextMenues"],
+  "permissions": ["storage", "contextMenus"],
   "background": {
     "service_worker": "background.js"
   },
-  "content_scripts":
-  {
-    "matches": ["<all_urls>"],
-    "js": ["content.js"],
-    "run_at": "document_start",
-    "all_frames": false
-  },
-  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
   "action": {
     "default_popup": "index.html",
     "default_title": "ContextStore"
